@@ -11,7 +11,7 @@ typedef struct print
 {
 	char *t;
 	int (*f)(va_list);
-} mystruct;
+} print_t;
 
 int _putchar(char c);
 int _printf(const char *format, ...);
@@ -29,4 +29,4 @@ int print_S(va_list S);
 int print_r(va_list r);
 int print_R(va_list R);
 
-#endif
+#endif  /* _HOLBERTON_H */
