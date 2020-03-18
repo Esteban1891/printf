@@ -1,10 +1,10 @@
 #include "holberton.h"
 
 /**
- * print_i - prints an integer
- * @i: integer to print
+ * print_i - Prints integer
+ * @i: Int to print
  *
- * Return: number of chars and digits printed
+ * Return: Numbers of integers printed
  */
 int print_i(va_list i)
 {
@@ -40,10 +40,10 @@ int print_i(va_list i)
 }
 
 /**
- * print_d - prints a decimal
- * @d: decimal to print
+ * print_d - Prints a decimal number
+ * @d: Number to print
  *
- * Return: number of chars and digits printed
+ * Return: Numbers of decimals printed
  */
 int print_d(va_list d)
 {
