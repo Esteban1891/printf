@@ -38,45 +38,49 @@ static int (*check_for_specifiers(const char *format))(va_list)
 }
 
 /**
- * _printf - prints anything
- * @format: list of argument types passed to the function
+ * _printf - Main function for printf
+ * @format: Format to print the data
  *
- * Return: number of characters printed
+ * Return: The numbers of characters printed except null byte
  */
 int _printf(const char *format, ...)
 {
-	unsigned int i = 0, count = 0;
-	va_list valist;
-	int (*f)(va_list);
+	unsigned int i = 0
+	unsigned int contador = 0;
+	va_list mylist;
+	int (*ptr)(va_list);
 
 	if (format == NULL)
 		return (-1);
-	va_start(valist, format);
-	while (format[i])
+
+	va_start(mylist, format);
+	while (*format)
 	{
-		for (; format[i] != '%' && format[i]; i++)
+		while (format[i] != '%' && format[i] != '\0')
 		{
 			_putchar(format[i]);
-			count++;
+			i++;
+			contador++;
 		}
-		if (!format[i])
-			return (count);
-		f = check_for_specifiers(&format[i + 1]);
+		if (!(*format))
+			return (contador);
+		ptr = check_for_specifiers(&format[i + 1]);
 		if (f != NULL)
 		{
-			count += f(valist);
+			contador += f(mylist);
 			i += 2;
 			continue;
 		}
 		if (!format[i + 1])
 			return (-1);
+
 		_putchar(format[i]);
-		count++;
+		contador++;
 		if (format[i + 1] == '%')
 			i += 2;
 		else
 			i++;
 	}
-	va_end(valist);
-	return (count);
+	va_end(mylist);
+	return (contador);
 }
