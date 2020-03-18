@@ -10,7 +10,7 @@
 static int (*check_for_specifiers(const char *format))(va_list)
 {
 	unsigned int i;
-	mystruct p[] = {
+	print_t p[] = {
 		{"c", print_c},
 		{"s", print_s},
 		{"i", print_i},
@@ -59,6 +59,8 @@ int _printf(const char *format, ...)
 			_putchar(format[i]);
 			count++;
 		}
+		if (!format[i])
+			return (count);
 		f = check_for_specifiers(&format[i + 1]);
 		if (f != NULL)
 		{
@@ -66,6 +68,8 @@ int _printf(const char *format, ...)
 			i += 2;
 			continue;
 		}
+		if (!format[i + 1])
+			return (-1);
 		_putchar(format[i]);
 		count++;
 		if (format[i + 1] == '%')
