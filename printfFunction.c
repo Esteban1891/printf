@@ -2,15 +2,15 @@
 #include <stdlib.h>
 
 /**
- * conversion_specifiers - Looks for a specifier
- * @format: Format specifier
+ * check_for_specifiers - checks if there is a valid format specifier
+ * @format: possible format specifier
  *
  * Return: pointer to valid function or NULL
  */
-static int (*conversion_specifiers(const char *format))(va_list)
+static int (*check_for_specifiers(const char *format))(va_list)
 {
 	unsigned int i;
-	mystruct specifiers[] = {
+	mystruct p[] = {
 		{"c", print_c},
 		{"s", print_s},
 		{"i", print_i},
@@ -27,60 +27,56 @@ static int (*conversion_specifiers(const char *format))(va_list)
 		{NULL, NULL}
 	};
 
-	for (i = 0; specifiers[i].type != NULL; i++)
+	for (i = 0; p[i].t != NULL; i++)
 	{
-		if (*(specifiers[i].type) == *format)
+		if (*(p[i].t) == *format)
 		{
 			break;
 		}
 	}
-	return (specifiers[i].ptr);
+	return (p[i].f);
 }
 
 /**
- * _printf - Main function for printf
- * @format: Format to print the data
+ * _printf - prints anything
+ * @format: list of argument types passed to the function
  *
- * Return: The numbers of characters printed except null byte
+ * Return: number of characters printed
  */
 int _printf(const char *format, ...)
 {
-	unsigned int i = 0;
-	unsigned int contador = 0;
-	va_list mylist;
-	int (*ptr)(va_list);
+	unsigned int i = 0, count = 0;
+	va_list valist;
+	int (*f)(va_list);
 
 	if (format == NULL)
 		return (-1);
-
-	va_start(mylist, format);
-	while (*format)
+	va_start(valist, format);
+	while (format[i])
 	{
-		while (format[i] != '%' && format[i] != '\0')
+		for (; format[i] != '%' && format[i]; i++)
 		{
 			_putchar(format[i]);
-			i++;
-			contador++;
+			count++;
 		}
-		if (!(*format))
-			return (contador);
-		ptr = conversion_specifiers(&format[i + 1]);
-		if (ptr != NULL)
+		if (!format[i])
+			return (count);
+		f = check_for_specifiers(&format[i + 1]);
+		if (f != NULL)
 		{
-			contador += ptr(mylist);
+			count += f(valist);
 			i += 2;
 			continue;
 		}
 		if (!format[i + 1])
 			return (-1);
-
 		_putchar(format[i]);
-		contador++;
+		count++;
 		if (format[i + 1] == '%')
 			i += 2;
 		else
 			i++;
 	}
-	va_end(mylist);
-	return (contador);
+	va_end(valist);
+	return (count);
 }

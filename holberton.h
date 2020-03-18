@@ -2,17 +2,15 @@
 #define _HOLBERTON_H_
 
 #include <stdarg.h>
-#include <limits.h>
-#include <stdlib.h>
 /**
- * struct print - Type identifier for printing
- * @type: type to print
- * @ptr: function to check for print
+ * struct print - structure for printing various types
+ * @t: type to print
+ * @f: function to print
  */
 typedef struct print
 {
-	char *type;
-	int (*ptr)(va_list);
+	char *t;
+	int (*f)(va_list);
 } mystruct;
 
 int _putchar(char c);
