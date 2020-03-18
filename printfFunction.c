@@ -2,15 +2,15 @@
 #include <stdlib.h>
 
 /**
- * check_for_specifiers - checks if there is a valid format specifier
- * @format: possible format specifier
+ * conversion_specifiers - Looks for a specifier
+ * @format: Format specifier
  *
  * Return: pointer to valid function or NULL
  */
-static int (*check_for_specifiers(const char *format))(va_list)
+static int (*conversion_specifiers(const char *format))(va_list)
 {
 	unsigned int i;
-	mystruct p[] = {
+	mystruct specifiers[] = {
 		{"c", print_c},
 		{"s", print_s},
 		{"i", print_i},
@@ -27,14 +27,14 @@ static int (*check_for_specifiers(const char *format))(va_list)
 		{NULL, NULL}
 	};
 
-	for (i = 0; p[i].t != NULL; i++)
+	for (i = 0; specifiers[i].type != NULL; i++)
 	{
-		if (*(p[i].t) == *format)
+		if (*(specifier[i].type) == *format)
 		{
 			break;
 		}
 	}
-	return (p[i].f);
+	return (specifier[i].ptr);
 }
 
 /**
@@ -64,7 +64,7 @@ int _printf(const char *format, ...)
 		}
 		if (!(*format))
 			return (contador);
-		ptr = check_for_specifiers(&format[i + 1]);
+		ptr = conversion_specifiers(&format[i + 1]);
 		if (f != NULL)
 		{
 			contador += f(mylist);
