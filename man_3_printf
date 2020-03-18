@@ -1,19 +1,16 @@
+.TH man 3 "17 March 2020" "0.1.1" "_printf man page"
 .SH NAME
 .B _printf
 - Prints formatted data
 .SH SYNOPSIS
-.B #include "holberton.h"
-
-.B int _printf(const char *
+.B #include "holberton.h".B int _printf(const char *
 .I format
 .B , ...)
 .SH DESCRIPTION
 .B _printf()
 -_printf() is a custom implementation of printf() that prints formatted data
 .SH Return value
-Return the number of characters printed, except the null byte placed at the end of the strings.
-
-If an error occurs, return -1.
+Return the number of characters printed, except the null byte placed at the end of the strings.If an error occurs, return -1.
 .SH Specifiers
 The specifiers are characters put after a % sign. They specify which format is required to apply to the data.
 .TP
@@ -29,11 +26,7 @@ Prints a decimal
 .B i
 Prints an integer
 .SH EXAMPLE
-Print the name, last name and age of a person: name and last name are pointers to strings and age is an integer:
-
-#include "holberton.h"
-
-_printf("%s, %s %d, \\n", name, last_name, age);
+Print the name, last name and age of a person: name and last name are pointers to strings and age is an integer:#include "holberton.h"_printf("%s, %s %d, \\n", name, last_name, age);
 .SH SEE ALSO
 .I printf(3)
 .SH AUTHOR
