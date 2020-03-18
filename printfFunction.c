@@ -29,12 +29,12 @@ static int (*conversion_specifiers(const char *format))(va_list)
 
 	for (i = 0; specifiers[i].type != NULL; i++)
 	{
-		if (*(specifier[i].type) == *format)
+		if (*(specifiers[i].type) == *format)
 		{
 			break;
 		}
 	}
-	return (specifier[i].ptr);
+	return (specifiers[i].ptr);
 }
 
 /**
@@ -45,7 +45,7 @@ static int (*conversion_specifiers(const char *format))(va_list)
  */
 int _printf(const char *format, ...)
 {
-	unsigned int i = 0
+	unsigned int i = 0;
 	unsigned int contador = 0;
 	va_list mylist;
 	int (*ptr)(va_list);
@@ -65,9 +65,9 @@ int _printf(const char *format, ...)
 		if (!(*format))
 			return (contador);
 		ptr = conversion_specifiers(&format[i + 1]);
-		if (f != NULL)
+		if (ptr != NULL)
 		{
-			contador += f(mylist);
+			contador += ptr(mylist);
 			i += 2;
 			continue;
 		}
