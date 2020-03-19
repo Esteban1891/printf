@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
- * print_b - takes an unsigned int and prints it in binary notation
- * @b: unsigned in to print
+ * print_b - Converts unsigned int to binary
+ * @b: Unsigned int to convert
  *
  * Return: number of digits printed
  */
