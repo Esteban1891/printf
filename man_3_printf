@@ -3,7 +3,8 @@
 .B _printf
 - Prints formatted data
 .SH SYNOPSIS
-.B #include "holberton.h".B int _printf(const char *
+.B #include "holberton.h"
+.B int _printf(const char *
 .I format
 .B , ...)
 .SH DESCRIPTION
@@ -26,7 +27,9 @@ Prints a decimal
 .B i
 Prints an integer
 .SH EXAMPLE
-Print the name, last name and age of a person: name and last name are pointers to strings and age is an integer:#include "holberton.h"_printf("%s, %s %d, \\n", name, last_name, age);
+Print the name, last name and age of a person: name and last name are pointers to strings and age is an integer:
+#include "holberton.h"
+_printf("%s, %s %d, \\n", name, last_name, age);
 .SH SEE ALSO
 .I printf(3)
 .SH BUGS
