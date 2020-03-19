@@ -18,6 +18,9 @@ The specifiers are characters put after a % sign. They specify which format is r
 .BR c
 Prints a single character
 .TP
+.BR b
+prints unsigned int in binary
+.TP
 .B s
 Prints a string, this is an array of characters
 .TP
