@@ -16,6 +16,7 @@ static int (*check_formats(const char *format))(va_list)
 		{"i", print_i},
 		{"d", print_d},
 		{"b", print_b},
+		{"R", print_R},
 		{NULL, NULL}
 	};
 
