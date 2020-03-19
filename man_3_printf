@@ -15,10 +15,10 @@ Return the number of characters printed, except the null byte placed at the end 
 .SH Specifiers
 The specifiers are characters put after a % sign. They specify which format is required to apply to the data.
 .TP
-.BR c
+.B c
 Prints a single character
 .TP
-.BR b
+.B b
 prints unsigned int in binary
 .TP
 .B s
