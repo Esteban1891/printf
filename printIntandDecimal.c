@@ -8,34 +8,20 @@
  */
 int print_i(va_list i)
 {
-	int a[10];
-	int j, m, n, sum, count;
+	int count = 0;
 
-	n = va_arg(i, int);
-	count = 0;
-	m = 1000000000;
-	a[0] = n / m;
-	for (j = 1; j < 10; j++)
+	if (i < 0)
 	{
-		m /= 10;
-		a[j] = (n / m) % 10;
+		putchar('-');
+		i = -i;
 	}
-	if (n < 0)
+	if (i / 10)
 	{
-		_putchar('-');
+		print_i(i / 10);
 		count++;
-		for (j = 0; j < 10; j++)
-			a[j] *= -1;
 	}
-	for (j = 0, sum = 0; j < 10; j++)
-	{
-		sum += a[j];
-		if (sum != 0 || j == 9)
-		{
-			_putchar('0' + a[j]);
-			count++;
-		}
-	}
+	putchar((i % 10) + '0');
+
 	return (count);
 }
 
@@ -47,33 +33,19 @@ int print_i(va_list i)
  */
 int print_d(va_list d)
 {
-	int a[10];
-	int j, m, n, sum, count;
+	int count = 0;
 
-	n = va_arg(d, int);
-	count = 0;
-	m = 1000000000;
-	a[0] = n / m;
-	for (j = 1; j < 10; j++)
+	if (i < 0)
 	{
-		m /= 10;
-		a[j] = (n / m) % 10;
+		putchar('-');
+		i = -i;
 	}
-	if (n < 0)
+	if (i / 10)
 	{
-		_putchar('-');
+		print_d(i / 10);
 		count++;
-		for (j = 0; j < 10; j++)
-			a[j] *= -1;
 	}
-	for (j = 0, sum = 0; j < 10; j++)
-	{
-		sum += a[j];
-		if (sum != 0 || j == 9)
-		{
-			_putchar('0' + a[j]);
-			count++;
-		}
-	}
+	putchar((i % 10) + '0');
+
 	return (count);
 }
