@@ -1,6 +1,6 @@
-# printf
+# printf :fax:
 
-### Description
+### Description :hourglass_flowing_sand:
 
 ------------
 
@@ -13,7 +13,7 @@ These arguments are placed using the percentage '%' operator
 ------------
 
 
-#### Resources
+#### Resources :wrench:
 
 ------------
 
