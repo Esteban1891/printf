@@ -1,6 +1,6 @@
 # printf :fax:
 
-### Description :hourglass_flowing_sand:
+## Description :hourglass_flowing_sand:
 
 ------------
 
@@ -13,7 +13,7 @@ These arguments are placed using the percentage '%' operator
 ------------
 
 
-#### Resources :wrench:
+## Resources :wrench:
 
 ------------
 
@@ -25,7 +25,7 @@ https://www.cypress.com/file/54761/download
 
 
 
-#### Authorized functions and macros
+## Authorized functions and macros
 
 ------------
 
@@ -40,7 +40,7 @@ va_arg (man 3 va_arg)
 
 ------------
 
-#### Compilation
+## Compilation
 
 ------------
 
@@ -56,7 +56,7 @@ The main files will include your main header file (holberton.h): **#include holb
 
 ------------
 
-#### Use & Examples
+## Use & Examples
 
 
 ------------
@@ -75,7 +75,7 @@ Many other specifiers and flags were added and by combinig those the _printf() f
 
 ------------
 
-#### Use & Examples
+## Use & Examples
 
 
 ------------
@@ -97,7 +97,7 @@ Specifier                |Output                        |Examples |
 | `r` | Reversed string of characters | dlroW olleH |
 | `R` | ROT13 Translation of string | Uryyb |
 
-###### Flags (In development...)
+## Flags (In development...)
 
 |Flag                |Description                        |
 |----------------|-------------------------------|
@@ -107,7 +107,7 @@ Specifier                |Output                        |Examples |
 | `#` |Used with `o`, `x` or `X` specifiers the value is preceeded with 0, 0x or 0X respectively for values different than zero. |
 | `0` |Left-pads the number with zeroes (`0`) instead of spaces when padding is specified (see _width_ sub-specifier). |
 
-###### Width (In development...)
+## Width (In development...)
 
 |Width                |Description                        |
 |----------------|-------------------------------|
@@ -120,7 +120,7 @@ Specifier                |Output                        |Examples |
 |----------------|-------------------------------|
 | `.(number)` |**For integer specifiers (`d`, `i`, `o`, `u`, `x`, `X`):** _precision_ specifies the minimum number of digits to be written. If the value to be written is shorter than this number, the result is padded with leading zeros. The value is not truncated even if the result is longer. A _precision_ of 0 means that no character is written for the value 0. **For `s`**: this is the maximum number of characters to be printed. By default all characters are printed until the ending null character is encountered. If the period is specified without an explicit value for _precision_, 0 is assumed. |
 
-### Lenght modifiers (In development...)
+## Lenght modifiers (In development...)
 
 |Modifier/Specifier  |`d` & `i`  |`u`, `o`, `x`, `X` |`c` |`s` |`p` |
 |----------------|---------|------------|-------------|-----|-------|
@@ -130,7 +130,7 @@ Specifier                |Output                        |Examples |
 
 ------------
 
-#### Files contained in this repository
+## Files contained in this repository
 
 
 ------------
@@ -145,46 +145,46 @@ Specifier                |Output                        |Examples |
 `printf_char.c` | Custom function for char data type. | `None`
 |`printf_sting.c` | Function that calls string type variable. | `None` |
 |`printf_bin.c` | Function that gets the binary | `None` |
-`printf_oct.c` | Functions that returns octal number. | `None` |
-`printf_hex.c` | Calls hexadecimal numbers (lowercase). | `None` | 
-`printf_HEX.c` | Calls hexadecimal numbers (Uppercase). | `None` |
-`printf_unsigned.c` | Returns an unisgined data type. | `None` |
-`printf_hex_aux.c` | Auxiliar function for hexadecimal specific functions (lowercase). | `printf_exclusive_string.c` | 
-`printf_HEX_aux.c` | Auxiliar function hexadecimal specific functions (Uppercase). | `printf_p.c` |
-`printf_exclusive_string.c` | Returns a string and non readable characters are printed in hexadecimal numbers (Lowercase). | `printf_hex_aux.c` |
-`printf_srev.c` | Returns a string in reverse. | `None` |
-`printf_rot13.c` | Returns a string in Rot13. | `None` |
-`printf_str.c` | Auxiliar functions such as strlen and strcpy. | `None` |
-`_putchar.c` | Custom putchar function. | `None` |
+|`printf_oct.c` | Functions that returns octal number. | `None` |
+|`printf_hex.c` | Calls hexadecimal numbers (lowercase). | `None` | 
+|`printf_HEX.c` | Calls hexadecimal numbers (Uppercase). | `None` |
+|`printf_unsigned.c` | Returns an unisgined data type. | `None` |
+|`printf_hex_aux.c` | Auxiliar function for hexadecimal specific functions (lowercase). | `printf_exclusive_string.c` | 
+|`printf_HEX_aux.c` | Auxiliar function hexadecimal specific functions (Uppercase). | `printf_p.c` |
+|`printf_exclusive_string.c` | Returns a string and non readable characters are printed in hexadecimal numbers (Lowercase). | `printf_hex_aux.c` |
+|`printf_srev.c` | Returns a string in reverse. | `None` |
+|`printf_rot13.c` | Returns a string in Rot13. | `None` |
+|`printf_str.c` | Auxiliar functions such as strlen and strcpy. | `None` |
+|`_putchar.c` | Custom putchar function. | `None` |
 
 
 ------------
 
-#### Tasks required for this project
+## Tasks required for this project
 
 
 ------------
 
-0. ###### I am not going anywhere. You can print that wherever you want to. I'm here and I am a Spur for life1.  I am not going anywhere. You can print that wherever you want to. I'm here and I am a Spur for life. 
+## 0.  I am not going anywhere. You can print that wherever you want to. I'm here and I am a Spur for life1.  I am not going anywhere. You can print that wherever you want to. I'm here and I am a Spur for life. 
 Write a function that produces output according to a format.
 Handle the following conversion specifiers:
 - c
 - s
 - %
 
-1. ###### Education is when you read the fine print. Experience is what you get if you dont
+## 1. Education is when you read the fine print. Experience is what you get if you dont
 Handle the following conversion specifiers:
 - d
 - i
 
-2. ###### Just because its in print doesn't mean its the gospel
+## 2. Just because its in print doesn't mean its the gospel
 Create a man page for the function
 
-3. ###### With a face like mine, I do better in print
+## 3. With a face like mine, I do better in print
 Handle the following conversion specifiers:
 - b
 
-4. ###### What one has not experienced, one will never understand in print
+## 4. What one has not experienced, one will never understand in print
 Handle the following conversion specifiers:
 - u
 - x
@@ -192,45 +192,45 @@ Handle the following conversion specifiers:
 - x
 - X
 
-5. ###### Nothing in fine print is ever good news
+## 5. Nothing in fine print is ever good news
 Use a local buffer of 1024 chars in order to call write as little as possible.
 
-6. ###### Handle the following custom conversion specifier
+## 6. Handle the following custom conversion specifier
 - S : prints the string.
 - Non printable characters (0 < ASCII value < 32 or >= 127) are printed this way: \x, followed by the ASCII code value in hexadecimal (upper case - always 2 characters).
 
-7. ###### How is the world ruled and led to war? Diplomats lie to journalists and believe these lies when they see them in print
+## 7. How is the world ruled and led to war? Diplomats lie to journalists and believe these lies when they see them in print
 Handle the following conversion specifier: p
 
-8. ###### The big print gives and the small print takes away
+## 8. The big print gives and the small print takes away
 Handle the following flag characters for non-custom conversion specifiers:
 - ´+´
 - space
 - ´#´ 
 
-9. ###### Sarcasm is lost in print
+## 9. Sarcasm is lost in print
 Handle the following length modifiers for non-custom conversion specifiers:
 - l
 - h
 Conversion specifiers to handle: d, i, u, o, x, X
 
-10. ###### Print some money and give it to us for the rain forests
+## 10. Print some money and give it to us for the rain forests
 Handle the field width for non-custom conversion specifiers.
 
-11. ###### The negative is the equivalent of the composer's score, and the print the performance
+## 11. The negative is the equivalent of the composer's score, and the print the performance
 Handle the precision for non-custom conversion specifiers.
 
-12. ###### It's depressing when you're still around and your albums are out of print
+## 12. It's depressing when you're still around and your albums are out of print
 Handle the 0 flag character for non-custom conversion specifiers.
 
-13. ###### Every time that I wanted to give up, if I saw an interesting textile, print what ever, suddenly I would see a collection
+## 13. Every time that I wanted to give up, if I saw an interesting textile, print what ever, suddenly I would see a collection
 Handle the - flag character for non-custom conversion specifiers.
 
-14. ###### Print is the sharpest and the strongest weapon of our party
+## 14. Print is the sharpest and the strongest weapon of our party
 Handle the following custom conversion specifier:
  - r : prints the reversed string
 
-15. ###### The flood of print has turned reading into a process of gulping rather than savoring 
+## 15. The flood of print has turned reading into a process of gulping rather than savoring 
 Handle the following custom conversion specifier:
 - R: prints the rot13'ed string
 
